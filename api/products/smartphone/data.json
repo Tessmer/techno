@@ -1,0 +1,20 @@
+{
+    "id": "smartphone",
+    "name": "Smartphone",
+    "price": 1299,
+    "description": "Os filmes e as video chamadas ficam muito melhores em uma tela ultra-wide. A tela Max Vision de 6,5″ HD+ tem uma proporção de 20:9 para você ver tudo sem rolar para lá e para cá. Ela cobre 87% do dispositivo: é tela de sobra, mas você ainda consegue usar o telefone com uma mão só tranquilamente. Com os 4000 mAh da bateria de longa duração, são até 40 horas para você fazer o que quiser sem se preocupar com a carga. Escute músicas, faça chamadas, assista a vídeos na internet e aproveite ao máximo a potência da bateria do moto e20.",
+    "inventory": 10,
+    "img": "./api/products/smartphone/smartphone-img.jpg",
+    "reviews": [
+        {
+            "name": "Thamires",
+            "stars": 5,
+            "comment": "Gostei muito do produto. A câmera é excelente. Atendeu minhas necessidades."
+        },
+        {
+            "name": "Yasmin",
+            "stars": 4,
+            "comment": "Produto muito bom, mas poderia ser mais barato."
+        }
+    ]
+}
