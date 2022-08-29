@@ -1,0 +1,20 @@
+{
+    "id": "tablet",
+    "name": "Tablet",
+    "price": 899,
+    "description": "Eleve sua experiência de entretenimento, com os quatro alto-falantes e som com assinatura Dolby Atmos. Todos os detalhes do áudio, com clareza e profundidade excepcionais. Feito para oferecer um som de qualidade onde quer que você vá, abre um universo envolvente para seus conteúdos, jogos e atividades que agradam a todos.",
+    "inventory": 6,
+    "img": "./api/products/tablet/tablet-img.jpg",
+    "reviews": [
+        {
+            "name": "Robert",
+            "stars": 5,
+            "comment": "Achei muito massa pelo preço."
+        },
+        {
+            "name": "Arthur",
+            "stars": 4,
+            "comment": "Produto muito bom! Poderiam vir mais funcionalidades, mas tudo bem, a gente paga pela experiência."
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "id": "smartwatch",
+    "name": "SmartWatch",
+    "price": 1199,
+    "description": "Acompanhe o seu progresso de condicionamento físico com nosso primeiro smartwatch, que mede e informa a porcentagem de gordura corporal, massa muscular, água corporal e muito mais de forma conveniente. O sensor Samsung BioActive e nosso chip mais rápido trazem a maior inovação do Galaxy Watch até agora.",
+    "inventory": 8,
+    "img": "./api/products/smartwatch/smartwatch-img.jpg",
+    "reviews": [
+        {
+            "name": "Guidotti",
+            "stars": 5,
+            "comment": "Achei muito bom."
+        },
+        {
+            "name": "Juan",
+            "stars": 4,
+            "comment": "Produto muito bom, mas pelo preço poderia vir com mais funcionalidades."
+        }
+    ]
+}

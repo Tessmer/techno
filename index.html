@@ -1,0 +1,92 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="./vue.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Noto+Serif:400,700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Techno</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="header">
+        <img class="logo" src="./assets/techno.svg" alt="Techno">
+        <div class="cart-menu" @click="cartActive = true">
+          {{totalCart | formattedPrice}} | {{cart.length}}
+        </div>
+      </header>
+
+      <section class="products">
+        <div
+          v-for="item in products"
+          @click="openModal(item.id)"
+          :key="item.id"
+          class="product"
+        >
+          <img :src="item.img" alt="item.name" class="product-img" />
+          <div class="product-info">
+            <span class="product-price">{{item.price | formattedPrice}}</span>
+            <h2 class="product-name">{{item.name}}</h2>
+          </div>
+        </div>
+      </section>
+
+      <section v-if="product" @click="closeModal" class="modal">
+        <div class="modal-container">
+          <div class="modal-img">
+            <img :src="product.img" alt="product.name"></img>
+          </div>
+            <div class="modal-data">
+            <button @click="product = false" class="modal-close-button">X</button>
+            <span class="modal-price">{{product.price | formattedPrice}}</span>
+            <h2 class="modal-title">{{product.name}}</h2>
+            <p>{{product.description}}</p>
+            <button class="modal-btn" v-if="product.inventory > 0" @click="addItem">Adicionar item</button>
+            <button class="modal-btn sold-out" v-else disabled>Produto esgotado</button>
+            </div>
+            <div class="reviews">
+                <h2 class="reviews-subtitle">Avaliações</h2>
+                <ul>
+                    <li v-for="review in product.reviews" class="review">
+                    <p class="review-user">{{review.name}} | {{review.stars}} estrelas</p>
+                    <p class="review-comment">{{review.comment}}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+      </section>
+
+      <section class="cart-modal" :class="{active: cartActive}" @click="outsideCart">
+        <div class="cart-container">
+          <button @click="cartActive = false" class="modal-close-button">X</button>
+          <h2 class="cart-title">Carrinho</h2>
+        <div>
+        <ul class="cart-list" v-if="cart.length > 0">
+          <li v-for="(item, index) in cart" class="cart-item">
+            <p>{{item.name}}</p>
+            <p class="cart-item-price">{{item.price | formattedPrice}}</p>
+            <button class="cart-remove-item" @click="removeItem(index)">X</button>
+          </li>
+        </ul>
+          <p class="cart-total">{{totalCart | formattedPrice}}</p>
+          <button class="finalize-purchase">Finalizar compra</button>
+        </div>
+          <div v-else>
+            <p>Carrinho vazio</p>
+          </div>
+        </div>
+      </section>
+
+    <div class="alert" :class="{active: alertActive}">
+	    <p class="alert-message">{{alertMessage}}</p>  
+    </div>
+
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

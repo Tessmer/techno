@@ -1,0 +1,20 @@
+{
+    "id": "speaker",
+    "name": "Speaker",
+    "price": 599,
+    "description": "A Speaker DHE-6000 garante som de encher a sala! Seu formato aparenta um olho de aguia e seu LED com efeito dinâmico proporcionam vibração ao ambiente, com som transparente. A qualquer momento desfrute de efeito estéreo de ponta. De fácil conexão e ampla compatibilidade.",
+    "inventory": 2,
+    "img": "./api/products/speaker/speaker-img.jpg",
+    "reviews": [
+        {
+            "name": "Gui",
+            "stars": 5,
+            "comment": "Curti bastante."
+        },
+        {
+            "name": "Vanessa",
+            "stars": 4,
+            "comment": "Gostei muito do produto, mas acho que poderia ter vindo mais completo."
+        }
+    ]
+}
