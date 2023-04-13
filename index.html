@@ -65,14 +65,14 @@
           <button @click="cartActive = false" class="modal-close-button">X</button>
           <h2 class="cart-title">Carrinho</h2>
         <div>
-        <ul class="cart-list" v-if="cart.length > 0">
-          <li v-for="(item, index) in cart" class="cart-item">
+ <transition-group tag="ul" name="fade" mode="out-in" class="cart-list" v-if="cart.length > 0">
+          <li v-for="(item, index) in cart" class="cart-item" :key="item.name">
             <p>{{item.name}}</p>
             <p class="cart-item-price">{{item.price | formattedPrice}}</p>
             <button class="cart-remove-item" @click="removeItem(index)">X</button>
           </li>
-        </ul>
-          <p class="cart-total">{{totalCart | formattedPrice}}</p>
+        </transition-group>
+ <p class="cart-total">{{totalCart | formattedPrice}}</p>
           <button class="finalize-purchase">Finalizar compra</button>
         </div>
           <div v-else>
@@ -88,5 +88,16 @@
     </div>
 
     <script src="./app.js"></script>
+
+    <style>
+      .fade-enter-active, .fade-leave-active {
+        transition: all 0.3s;
+      }
+
+      .fade-enter, .fade-leave-to {
+        opacity: 0;
+        transform: translate3d(-20px, 0, 0);
+      }
+    </style>
   </body>
 </html>
